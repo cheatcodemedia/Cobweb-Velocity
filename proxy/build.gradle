@@ -20,6 +20,8 @@ jar {
             version = "${project.version}"
         }
 
+        version = "${version}-COBWEB"
+
         attributes 'Main-Class': 'com.velocitypowered.proxy.Velocity'
         attributes 'Implementation-Title': "Velocity"
         attributes 'Implementation-Version': version
