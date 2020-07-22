@@ -22,7 +22,6 @@ import com.velocitypowered.api.util.bossbar.BossBar;
 import com.velocitypowered.api.util.bossbar.BossBarColor;
 import com.velocitypowered.api.util.bossbar.BossBarOverlay;
 import com.velocitypowered.proxy.command.GlistCommand;
-import com.velocitypowered.proxy.command.ServerCommand;
 import com.velocitypowered.proxy.command.ShutdownCommand;
 import com.velocitypowered.proxy.command.VelocityCommand;
 import com.velocitypowered.proxy.command.VelocityCommandManager;
@@ -192,7 +191,6 @@ public class VelocityServer implements ProxyServer, ForwardingAudience {
 
     // Initialize commands first
     commandManager.register("velocity", new VelocityCommand(this));
-    commandManager.register("server", new ServerCommand(this));
     commandManager.register("shutdown", new ShutdownCommand(this),"end");
     commandManager.register("glist", new GlistCommand(this));
 
@@ -474,7 +472,7 @@ public class VelocityServer implements ProxyServer, ForwardingAudience {
     return !(connectionsByName.containsKey(lowerName)
         || connectionsByUuid.containsKey(connection.getUniqueId()));
   }
-  
+
   /**
    * Attempts to register the {@code connection} with the proxy.
    * @param connection the connection to register
